@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TimeBack</string>
+    <string name="accessibility_service_label">TimeBack Reel Counter &amp; Blocker</string>
+    <string name="accessibility_service_description">TimeBack uses Accessibility Services solely to count short-form videos (Reels and Shorts) scrolled across supported apps and enforce your daily limits for digital wellbeing. It never reads messages, collects personal data, or tracks private content.</string>
+    
+    <string name="notification_channel_name">TimeBack Reel Counter</string>
+    <string name="notification_channel_desc">Shows ongoing reel count and limits</string>
+    <string name="block_overlay_title">TimeBack Limit Reached!</string>
+    <string name="block_overlay_subtitle">Take a deep breath and take your time back from doomscrolling.</string>
+</resources>

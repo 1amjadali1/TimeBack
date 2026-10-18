@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="midnight_bg">#0A0907</color>
+    <color name="surface_dark">#14130F</color>
+    <color name="cream_accent">#FFE9B4</color>
+    <color name="apricot_accent">#FFB367</color>
+    <color name="rot_red">#FC4A52</color>
+    <color name="fresh_green">#79D056</color>
+    <color name="text_white">#FCFFFA</color>
+</resources>
