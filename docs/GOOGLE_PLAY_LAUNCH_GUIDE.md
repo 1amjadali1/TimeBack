@@ -19,16 +19,18 @@ d:\My Career\Reels App\
 │   │   │   ├── res\
 │   │   │   │   ├── xml\accessibility_service_config.xml
 │   │   │   │   └── values\ (strings, colors, themes)
-│   │   │   └── java\com.timeback.app\
+│   │   │   └── java\com\timeback\app\
 │   │   │       ├── MainActivity.kt
 │   │   │       ├── BlockOverlayActivity.kt
 │   │   │       ├── service\
 │   │   │       │   ├── ReelDetectionService.kt
-│   │   │       │   └── FloatingOverlayService.kt
+│   │   │       │   ├── FloatingOverlayService.kt
+│   │   │       │   └── BootReceiver.kt
 │   │   │       ├── data\
-│   │   │       │   └── PreferencesManager.kt
+│   │   │       │   ├── PreferencesManager.kt
+│   │   │       │   └── BillingManager.kt
 │   │   │       └── ui\
-│   │   │           ├── screens\ (Home, Blocker, Battle, Paywall)
+│   │   │           ├── screens\ (Onboarding, Permissions, Home, Blocker, Battle, Paywall, Profile)
 │   │   │           └── components\ (MascotBrainView)
 │   │   └── build.gradle.kts
 │   ├── build.gradle.kts
@@ -41,22 +43,38 @@ d:\My Career\Reels App\
 
 ---
 
-## 2. How to Open and Run in Android Studio
+## 2. Onboarding & Permissions Flow
 
-1. **Install Android Studio** (Ladybug / Iguana or later) with Android SDK 35 and JDK 17.
-2. In Android Studio, click **File -> Open...** and select:
-   `D:\My Career\Reels App\android`
-3. Allow Gradle to sync dependencies automatically.
-4. Connect an Android phone (with USB Debugging enabled) or start an Android Emulator.
-5. Click the green **Run (▶)** button.
+1. **5-Step Onboarding Questionnaire**:
+   * Q1: What do you do? (School student, College student, Working, Other)
+   * Q2: Where do you scroll the most? (Instagram Reels, YouTube Shorts, Snapchat, Facebook, Moj/Josh/ShareChat)
+   * Q3: What do you want that time back for? (Studies, Work, Sleep, Fitness, Family, Peace of mind)
+   * Q4: After a long scroll, how do you feel? (Guilty, Tired, Can't focus, I sleep late)
+   * Q5: When do you scroll the most? (Morning in bed, During study/work, After dinner, Late at night)
+2. **Permissions Setup**:
+   * **Reel Counting**: AccessibilityService API
+   * **Floating Bubble**: Display over other apps (`SYSTEM_ALERT_WINDOW`)
+   * **Invisible Background Running**: Exempt from battery optimization & starts on device boot via `BootReceiver`.
 
 ---
 
-## 3. How to Pass Google Play Accessibility Policy Review (Crucial!)
+## 3. Subscription & Pricing Setup in Google Play Console
 
-Google has strict scrutiny over apps that use `android.accessibilityservice.AccessibilityService`. If you do not answer their declaration form correctly, the app will be rejected.
+In **Google Play Console -> Monetize -> Subscriptions**:
 
-### The Required Google Play Declaration Form Answers:
+1. Subscription Product ID: `timeback_plus`
+2. **Base Plan 1 (Monthly):**
+   * ID: `monthly-plan`
+   * Regular Price: **₹49 / month**
+   * Promotional Offer: **₹25 first month** (Introductory price)
+3. **Base Plan 2 (Annual):**
+   * ID: `yearly-plan`
+   * Regular Price: **₹449 / year**
+   * Promotional Offer: **₹299 / year** (Save ₹150 discount offer)
+
+---
+
+## 4. How to Pass Google Play Accessibility Policy Review (Crucial!)
 
 When filling out the **Policy -> App Content -> Accessibility Tool** declaration in Google Play Console:
 
@@ -68,46 +86,4 @@ When filling out the **Policy -> App Content -> Accessibility Tool** declaration
 3. **Does the app access or collect personal data?**
    * Select: **No. It does not access, read, transmit, or store private personal messages, keystrokes, user accounts, or video content.**
 4. **Is there an in-app prominent disclosure?**
-   * Select: **Yes. The app displays a prominent modal disclosure explaining the exact usage before asking the user to navigate to Accessibility Settings.** *(This is implemented in `PermissionDisclosureDialog.kt`).*
-5. **Video Demonstration URL:**
-   * Google will ask for a short YouTube video (Unlisted) showing the user opening the app, seeing the disclosure, turning on Accessibility, and then scrolling a reel to see the counter increment.
-
----
-
-## 4. Google Play Billing Setup (Subscriptions)
-
-In **Google Play Console -> Monetize -> Subscriptions**:
-
-1. Create a Subscription base product:
-   * **Product ID:** `timeback_plus`
-2. Add Base Plans:
-   * **Base Plan 1 (Monthly):**
-     * ID: `timeback_plus_monthly`
-     * Price: ₹99 / month (or equivalent in other currencies)
-     * Billing period: 1 month
-   * **Base Plan 2 (Yearly):**
-     * ID: `timeback_plus_yearly`
-     * Price: ₹999 / year
-     * Free trial offer: 7 days free
-3. Once created, Google Play automatically validates purchases inside `PaywallScreen.kt`.
-
----
-
-## 5. Generating Release APK / Android App Bundle (.aab)
-
-To upload to Google Play:
-1. In Android Studio, go to **Build -> Generate Signed Bundle / APK...**
-2. Choose **Android App Bundle (.aab)**.
-3. Create a new Keystore:
-   * Store path: `timeback-release-key.jks`
-   * Password: *(Create a secure password)*
-   * Alias: `timeback_key`
-4. Select **Release** build type.
-5. Upload the resulting `.aab` file to **Google Play Console -> Production / Closed Testing**.
-
----
-
-## 6. Privacy Policy & Terms Links
-
-Google Play requires public URLs for your Privacy Policy and Terms of Use.
-You can host the two files inside `docs/` (`PRIVACY_POLICY.html` and `TERMS_OF_SERVICE.html`) on GitHub Pages or Vercel for free!
+   * Select: **Yes. The app displays a prominent modal disclosure explaining the exact usage before asking the user to navigate to Accessibility Settings.** *(Implemented in `PermissionDisclosureDialog.kt` and `PermissionsSetupScreen.kt`).*
