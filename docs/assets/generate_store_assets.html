@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TimeBack - Play Store Graphics Asset Generator</title>
+  <title>TimeBack - Play Store Complete Graphics Pack Generator</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -14,7 +14,7 @@
     }
     h1 { color: #FFE9B4; margin-bottom: 8px; }
     p { color: rgba(252,255,250,0.7); margin-bottom: 32px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 32px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 32px; margin-bottom: 40px; }
     .card {
       background: #14130F;
       border: 1px solid rgba(255,233,180,0.15);
@@ -34,14 +34,15 @@
       align-items: center;
       justify-content: center;
       padding: 12px;
+      min-height: 240px;
     }
-    canvas { max-width: 100%; height: auto; border-radius: 12px; }
+    canvas { max-width: 100%; max-height: 320px; height: auto; border-radius: 10px; }
     .btn-download {
       background: linear-gradient(180deg, #FFE9B4 0%, #FFD99A 100%);
       color: #2B1600;
       font-weight: 800;
-      font-size: 15px;
-      padding: 14px 24px;
+      font-size: 14px;
+      padding: 12px 20px;
       border-radius: 999px;
       border: none;
       cursor: pointer;
@@ -54,13 +55,15 @@
     }
     .btn-download:hover { transform: translateY(-1px); box-shadow: 0 5px 0 #B8732C; }
     .btn-download:active { transform: translateY(3px); box-shadow: 0 1px 0 #B8732C; }
+    h2.section-title { color: #FFE9B4; border-bottom: 1px solid rgba(255,233,180,0.2); padding-bottom: 10px; margin-top: 40px; }
   </style>
 </head>
 <body>
 
-  <h1>TimeBack - Google Play Store Asset Generator</h1>
-  <p>Google Play Console par upload karne ke liye 512x512 App Icon aur 1024x500 Feature Graphic niche render ho chuke hain. Bas 1-click karke download karein aur Play Console par upload kar dein!</p>
+  <h1>TimeBack - Google Play Store Assets Pack</h1>
+  <p>Google Play Console par upload karne ke liye <b>Icon, Banner aur 3 Screenshots</b> ready hain. Har button par click karke download karein aur Play Console par upload kar dein!</p>
 
+  <h2 class="section-title">Part 1: Common Visual Assets (Icon & Banner)</h2>
   <div class="grid">
 
     <!-- Card 1: 512x512 App Icon -->
@@ -93,17 +96,61 @@
 
   </div>
 
+  <h2 class="section-title">Part 2: Phone Screenshots (Min 2 Required)</h2>
+  <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+    <!-- Screenshot 1 -->
+    <div class="card">
+      <div>
+        <h3>Screenshot 1: Live Counter & Mascot</h3>
+        <span>1080 x 1920 pixels • 9:16 Ratio</span>
+      </div>
+      <div class="preview-box">
+        <canvas id="ss1Canvas" width="1080" height="1920"></canvas>
+      </div>
+      <button class="btn-download" onclick="downloadCanvas('ss1Canvas', 'screenshot_1_dashboard.png')">
+        ⬇️ Download Screenshot 1
+      </button>
+    </div>
+
+    <!-- Screenshot 2 -->
+    <div class="card">
+      <div>
+        <h3>Screenshot 2: Reels Blocker Modal</h3>
+        <span>1080 x 1920 pixels • 9:16 Ratio</span>
+      </div>
+      <div class="preview-box">
+        <canvas id="ss2Canvas" width="1080" height="1920"></canvas>
+      </div>
+      <button class="btn-download" onclick="downloadCanvas('ss2Canvas', 'screenshot_2_blocker.png')">
+        ⬇️ Download Screenshot 2
+      </button>
+    </div>
+
+    <!-- Screenshot 3 -->
+    <div class="card">
+      <div>
+        <h3>Screenshot 3: 1v1 Battle Ring</h3>
+        <span>1080 x 1920 pixels • 9:16 Ratio</span>
+      </div>
+      <div class="preview-box">
+        <canvas id="ss3Canvas" width="1080" height="1920"></canvas>
+      </div>
+      <button class="btn-download" onclick="downloadCanvas('ss3Canvas', 'screenshot_3_battle.png')">
+        ⬇️ Download Screenshot 3
+      </button>
+    </div>
+
+  </div>
+
   <script>
     // 1. Draw 512x512 App Icon
     function drawAppIcon() {
       const canvas = document.getElementById('iconCanvas');
       const ctx = canvas.getContext('2d');
-
-      // Background rounded midnight
       ctx.fillStyle = '#0A0907';
       ctx.fillRect(0, 0, 512, 512);
 
-      // Radial Warm Glow
       const grad = ctx.createRadialGradient(256, 256, 40, 256, 256, 240);
       grad.addColorStop(0, 'rgba(113, 58, 0, 0.7)');
       grad.addColorStop(0.6, 'rgba(38, 20, 0, 0.4)');
@@ -113,48 +160,29 @@
       ctx.arc(256, 256, 240, 0, Math.PI * 2);
       ctx.fill();
 
-      // Outer Gold Accent Ring
       ctx.strokeStyle = 'rgba(255, 233, 180, 0.25)';
       ctx.lineWidth = 8;
       ctx.beginPath();
       ctx.arc(256, 256, 230, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Mascot Brain Body (Centered)
       ctx.fillStyle = '#FFAAA6';
       ctx.beginPath();
       ctx.arc(256, 256, 150, 0, Math.PI * 2);
       ctx.fill();
 
-      // Brain Texture / Lobes
-      ctx.fillStyle = '#FF837D';
-      ctx.beginPath();
-      ctx.arc(190, 210, 36, 0, Math.PI * 2);
-      ctx.arc(322, 210, 36, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Big Eyes
       ctx.fillStyle = '#2B1600';
       ctx.beginPath();
       ctx.arc(210, 250, 22, 0, Math.PI * 2);
       ctx.arc(302, 250, 22, 0, Math.PI * 2);
       ctx.fill();
 
-      // Eye Sparkles
       ctx.fillStyle = '#FFFFFF';
       ctx.beginPath();
       ctx.arc(204, 242, 8, 0, Math.PI * 2);
       ctx.arc(296, 242, 8, 0, Math.PI * 2);
       ctx.fill();
 
-      // Cheeks Blush
-      ctx.fillStyle = '#FF837D';
-      ctx.beginPath();
-      ctx.arc(170, 280, 16, 0, Math.PI * 2);
-      ctx.arc(342, 280, 16, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Smile
       ctx.strokeStyle = '#2B1600';
       ctx.lineWidth = 10;
       ctx.lineCap = 'round';
@@ -162,7 +190,6 @@
       ctx.arc(256, 285, 36, 0.1 * Math.PI, 0.9 * Math.PI, false);
       ctx.stroke();
 
-      // Clock Badge Top-Right
       ctx.fillStyle = '#FFE9B4';
       ctx.strokeStyle = '#B8732C';
       ctx.lineWidth = 6;
@@ -171,7 +198,6 @@
       ctx.fill();
       ctx.stroke();
 
-      // Clock hands
       ctx.strokeStyle = '#2B1600';
       ctx.lineWidth = 6;
       ctx.beginPath();
@@ -186,12 +212,9 @@
     function drawFeatureGraphic() {
       const canvas = document.getElementById('featureCanvas');
       const ctx = canvas.getContext('2d');
-
-      // Dark background
       ctx.fillStyle = '#0A0907';
       ctx.fillRect(0, 0, 1024, 500);
 
-      // Warm glow gradient on left
       const grad = ctx.createRadialGradient(280, 250, 50, 280, 250, 400);
       grad.addColorStop(0, 'rgba(113, 58, 0, 0.8)');
       grad.addColorStop(0.5, 'rgba(38, 20, 0, 0.5)');
@@ -201,62 +224,247 @@
       ctx.arc(280, 250, 400, 0, Math.PI * 2);
       ctx.fill();
 
-      // Left: Brain Mascot
       ctx.save();
       ctx.translate(260, 250);
-
-      // Mascot Brain Circle
       ctx.fillStyle = '#FFAAA6';
       ctx.beginPath();
       ctx.arc(0, 0, 120, 0, Math.PI * 2);
       ctx.fill();
-
-      // Eyes
       ctx.fillStyle = '#2B1600';
       ctx.beginPath();
       ctx.arc(-38, -10, 18, 0, Math.PI * 2);
       ctx.arc(38, -10, 18, 0, Math.PI * 2);
       ctx.fill();
-
-      // Highlights
       ctx.fillStyle = '#FFFFFF';
       ctx.beginPath();
       ctx.arc(-42, -16, 7, 0, Math.PI * 2);
       ctx.arc(34, -16, 7, 0, Math.PI * 2);
       ctx.fill();
-
-      // Smile
       ctx.strokeStyle = '#2B1600';
       ctx.lineWidth = 8;
       ctx.lineCap = 'round';
       ctx.beginPath();
       ctx.arc(0, 20, 28, 0.1 * Math.PI, 0.9 * Math.PI, false);
       ctx.stroke();
-
       ctx.restore();
 
-      // Right: Typography & Value Proposition
       ctx.fillStyle = '#FFE9B4';
-      ctx.font = '800 68px "Plus Jakarta Sans", sans-serif';
+      ctx.font = '800 68px sans-serif';
       ctx.fillText('TimeBack', 480, 200);
-
       ctx.fillStyle = '#FCFFFA';
-      ctx.font = '700 28px "Plus Jakarta Sans", sans-serif';
+      ctx.font = '700 28px sans-serif';
       ctx.fillText('Reels Counter & Blocker', 480, 250);
-
       ctx.fillStyle = 'rgba(252, 255, 250, 0.7)';
-      ctx.font = '500 20px "Plus Jakarta Sans", sans-serif';
+      ctx.font = '500 20px sans-serif';
       ctx.fillText('See your reel count. Break doomscrolling.', 480, 295);
 
-      // Badge Pill
       ctx.fillStyle = '#FFE9B4';
       ctx.beginPath();
       ctx.roundRect(480, 330, 280, 48, [24]);
       ctx.fill();
+      ctx.fillStyle = '#2B1600';
+      ctx.font = '800 16px sans-serif';
+      ctx.fillText('GET YOUR TIME BACK ⏳', 510, 360);
+    }
+
+    // 3. Screenshot 1: Dashboard
+    function drawScreenshot1() {
+      const canvas = document.getElementById('ss1Canvas');
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#0A0907';
+      ctx.fillRect(0, 0, 1080, 1920);
+
+      // Top title
+      ctx.fillStyle = '#FFE9B4';
+      ctx.font = '800 64px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('See Your Real-Time Reel Count', 540, 200);
+
+      ctx.fillStyle = 'rgba(252,255,250,0.6)';
+      ctx.font = '500 36px sans-serif';
+      ctx.fillText('Counts reels across Instagram, YouTube & Snapchat', 540, 270);
+
+      // Hero Card
+      ctx.fillStyle = '#14130F';
+      ctx.strokeStyle = 'rgba(255,233,180,0.2)';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.roundRect(100, 380, 880, 800, [48]);
+      ctx.fill();
+      ctx.stroke();
+
+      // Brain Mascot
+      ctx.fillStyle = '#FFAAA6';
+      ctx.beginPath();
+      ctx.arc(540, 620, 160, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#2B1600';
+      ctx.beginPath();
+      ctx.arc(480, 600, 22, 0, Math.PI * 2);
+      ctx.arc(600, 600, 22, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#FFF';
+      ctx.beginPath();
+      ctx.arc(474, 592, 8, 0, Math.PI * 2);
+      ctx.arc(594, 592, 8, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#2B1600';
+      ctx.lineWidth = 12;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.arc(540, 660, 42, 0.1 * Math.PI, 0.9 * Math.PI, false);
+      ctx.stroke();
+
+      // Big Count
+      ctx.fillStyle = '#FCFFFA';
+      ctx.font = '900 130px sans-serif';
+      ctx.fillText('74', 540, 930);
+
+      ctx.fillStyle = 'rgba(252,255,250,0.6)';
+      ctx.font = '700 32px sans-serif';
+      ctx.fillText('REELS SCROLLED TODAY', 540, 1000);
+
+      // Badge
+      ctx.fillStyle = '#79D056';
+      ctx.beginPath();
+      ctx.roundRect(340, 1050, 400, 70, [35]);
+      ctx.fill();
+      ctx.fillStyle = '#0A0907';
+      ctx.font = '800 30px sans-serif';
+      ctx.fillText('Healthy Mind (Stage 1)', 540, 1098);
+
+      // Floating Bubble Pill
+      ctx.fillStyle = 'rgba(10,9,7,0.95)';
+      ctx.strokeStyle = '#FFE9B4';
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.roundRect(140, 1340, 800, 140, [70]);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#FFE9B4';
+      ctx.font = '800 42px sans-serif';
+      ctx.fillText('🎈 Live Draggable Bubble On Screen', 540, 1425);
+    }
+
+    // 4. Screenshot 2: Blocker
+    function drawScreenshot2() {
+      const canvas = document.getElementById('ss2Canvas');
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#0A0907';
+      ctx.fillRect(0, 0, 1080, 1920);
+
+      ctx.fillStyle = '#FC4A52';
+      ctx.font = '800 64px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Automatic Reels Blocker', 540, 200);
+
+      ctx.fillStyle = 'rgba(252,255,250,0.6)';
+      ctx.font = '500 36px sans-serif';
+      ctx.fillText('Enforces your daily quota to break the addiction', 540, 270);
+
+      // Blocker Card
+      ctx.fillStyle = '#14130F';
+      ctx.strokeStyle = '#FC4A52';
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.roundRect(100, 420, 880, 920, [48]);
+      ctx.fill();
+      ctx.stroke();
+
+      // Stop Icon
+      ctx.font = '120px sans-serif';
+      ctx.fillText('🛑', 540, 620);
+
+      ctx.fillStyle = '#FC4A52';
+      ctx.font = '800 56px sans-serif';
+      ctx.fillText('Daily Reel Limit Hit!', 540, 740);
+
+      ctx.fillStyle = 'rgba(252,255,250,0.8)';
+      ctx.font = '500 32px sans-serif';
+      ctx.fillText('You reached your limit on Instagram Reels (50 reels).', 540, 830);
+      ctx.fillText('TimeBack safely closed the feed to protect your focus.', 540, 880);
+
+      // Exit Button
+      ctx.fillStyle = '#FFE9B4';
+      ctx.beginPath();
+      ctx.roundRect(180, 1020, 720, 110, [55]);
+      ctx.fill();
 
       ctx.fillStyle = '#2B1600';
-      ctx.font = '800 16px "Plus Jakarta Sans", sans-serif';
-      ctx.fillText('GET YOUR TIME BACK ⏳', 510, 360);
+      ctx.font = '800 38px sans-serif';
+      ctx.fillText('Take Time Back (Exit)', 540, 1090);
+    }
+
+    // 5. Screenshot 3: Battle
+    function drawScreenshot3() {
+      const canvas = document.getElementById('ss3Canvas');
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#0A0907';
+      ctx.fillRect(0, 0, 1080, 1920);
+
+      ctx.fillStyle = '#FFE9B4';
+      ctx.font = '800 64px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('1v1 Daily Battle Ring', 540, 200);
+
+      ctx.fillStyle = 'rgba(252,255,250,0.6)';
+      ctx.font = '500 36px sans-serif';
+      ctx.fillText('Battle your friends — lower reel count wins!', 540, 270);
+
+      // Battle Ring Card
+      ctx.fillStyle = '#FFE9B4';
+      ctx.beginPath();
+      ctx.roundRect(100, 420, 880, 880, [48]);
+      ctx.fill();
+
+      ctx.fillStyle = '#2B1600';
+      ctx.font = '800 34px sans-serif';
+      ctx.fillText("TODAY'S 1v1 MATCHUP", 540, 520);
+
+      // Boxer 1 (You)
+      ctx.font = '100px sans-serif';
+      ctx.fillText('🥊', 320, 680);
+      ctx.fillStyle = '#2B1600';
+      ctx.font = '800 32px sans-serif';
+      ctx.fillText('YOU', 320, 760);
+
+      ctx.fillStyle = '#0A0907';
+      ctx.beginPath();
+      ctx.roundRect(220, 800, 200, 90, [45]);
+      ctx.fill();
+      ctx.fillStyle = '#FFE9B4';
+      ctx.font = '900 52px sans-serif';
+      ctx.fillText('36', 320, 865);
+
+      // VS
+      ctx.fillStyle = '#B8732C';
+      ctx.font = '900 70px sans-serif';
+      ctx.fillText('VS', 540, 820);
+
+      // Boxer 2 (Friend)
+      ctx.font = '100px sans-serif';
+      ctx.fillText('🥊', 760, 680);
+      ctx.fillStyle = '#2B1600';
+      ctx.font = '800 32px sans-serif';
+      ctx.fillText('FRIEND', 760, 760);
+
+      ctx.fillStyle = '#0A0907';
+      ctx.beginPath();
+      ctx.roundRect(660, 800, 200, 90, [45]);
+      ctx.fill();
+      ctx.fillStyle = '#FFE9B4';
+      ctx.font = '900 52px sans-serif';
+      ctx.fillText('94', 760, 865);
+
+      // Winner Badge
+      ctx.fillStyle = '#79D056';
+      ctx.beginPath();
+      ctx.roundRect(240, 1040, 600, 100, [50]);
+      ctx.fill();
+      ctx.fillStyle = '#0A0907';
+      ctx.font = '800 38px sans-serif';
+      ctx.fillText('🏆 You are winning today!', 540, 1105);
     }
 
     function downloadCanvas(canvasId, filename) {
@@ -269,6 +477,9 @@
 
     drawAppIcon();
     drawFeatureGraphic();
+    drawScreenshot1();
+    drawScreenshot2();
+    drawScreenshot3();
   </script>
 
 </body>
