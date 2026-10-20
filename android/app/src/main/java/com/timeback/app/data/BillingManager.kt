@@ -54,8 +54,9 @@ class BillingManager(
             .setProductList(productList)
             .build()
 
-        billingClient.queryProductDetailsAsync(params) { billingResult, productDetailsList ->
-            if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && productDetailsList.isNotEmpty()) {
+        billingClient.queryProductDetailsAsync(params) { billingResult, queryProductDetailsResult ->
+            val productDetailsList = queryProductDetailsResult.productDetailsList
+            if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && !productDetailsList.isNullOrEmpty()) {
                 val productDetails = productDetailsList[0]
                 val offerToken = productDetails.subscriptionOfferDetails
                     ?.find { it.basePlanId == basePlanId }?.offerToken

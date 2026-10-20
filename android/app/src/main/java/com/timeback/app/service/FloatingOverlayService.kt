@@ -57,7 +57,6 @@ class FloatingOverlayService : Service() {
     override fun onCreate() {
         super.onCreate()
         windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
-        startForegroundService()
         createFloatingBubble()
 
         val filter = IntentFilter(ACTION_UPDATE_COUNT)
