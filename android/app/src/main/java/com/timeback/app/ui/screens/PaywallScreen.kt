@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -35,7 +36,6 @@ import com.timeback.app.ui.theme.CreamAccent
 import com.timeback.app.ui.theme.FreshGreen
 import com.timeback.app.ui.theme.InkDark
 import com.timeback.app.ui.theme.LineBorder
-import com.timeback.app.ui.theme.RotRed
 import com.timeback.app.ui.theme.SurfaceDark
 import com.timeback.app.ui.theme.SurfaceElevated
 import com.timeback.app.ui.theme.TextMuted
@@ -207,5 +207,21 @@ fun PaywallScreen() {
         ) {
             Text(text = "Manage / Cancel on Google Play", color = TextMuted, fontSize = 12.sp, fontWeight = FontWeight.Bold)
         }
+    }
+}
+
+@Composable
+fun FeatureRow(title: String, enabled: Boolean) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(text = title, fontSize = 13.sp, color = TextPrimary)
+        Text(
+            text = if (enabled) "✓" else "—",
+            color = if (enabled) FreshGreen else TextMuted,
+            fontWeight = FontWeight.Bold
+        )
     }
 }

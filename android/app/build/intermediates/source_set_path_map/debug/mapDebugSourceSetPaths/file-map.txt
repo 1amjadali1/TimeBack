@@ -1,0 +1,63 @@
+com.timeback.app-lifecycle-livedata-core-ktx-2.8.6-0 C:\Users\neuro\.gradle\caches\9.8.0\transforms\08761417bcbe46b5cc239c9785e71b79\transformed\lifecycle-livedata-core-ktx-2.8.6\res
+com.timeback.app-ui-tooling-release-1 C:\Users\neuro\.gradle\caches\9.8.0\transforms\0b431cada703b369bef1102bf968c24b\transformed\ui-tooling-release\res
+com.timeback.app-lifecycle-viewmodel-savedstate-2.8.6-2 C:\Users\neuro\.gradle\caches\9.8.0\transforms\10249c9569b9a81656f15105cfdcc1d0\transformed\lifecycle-viewmodel-savedstate-2.8.6\res
+com.timeback.app-ui-graphics-release-3 C:\Users\neuro\.gradle\caches\9.8.0\transforms\11f470bb84b1a3efb4f787d83f671fc4\transformed\ui-graphics-release\res
+com.timeback.app-lifecycle-runtime-compose-release-4 C:\Users\neuro\.gradle\caches\9.8.0\transforms\17747b2aa0e11f97ae23de76087624e3\transformed\lifecycle-runtime-compose-release\res
+com.timeback.app-activity-compose-1.9.3-5 C:\Users\neuro\.gradle\caches\9.8.0\transforms\1850f520312fd7093510e78e437b763c\transformed\activity-compose-1.9.3\res
+com.timeback.app-lifecycle-viewmodel-compose-release-6 C:\Users\neuro\.gradle\caches\9.8.0\transforms\1b838a1315f6decd510800338633c61d\transformed\lifecycle-viewmodel-compose-release\res
+com.timeback.app-datastore-core-release-7 C:\Users\neuro\.gradle\caches\9.8.0\transforms\1daa6646ec4e55c8c380029ee2e6bcf5\transformed\datastore-core-release\res
+com.timeback.app-runtime-release-8 C:\Users\neuro\.gradle\caches\9.8.0\transforms\1f126c72840d5538bb3f2798630137f2\transformed\runtime-release\res
+com.timeback.app-lifecycle-runtime-ktx-release-9 C:\Users\neuro\.gradle\caches\9.8.0\transforms\21162b91ae362cefd8a70762a4626b0f\transformed\lifecycle-runtime-ktx-release\res
+com.timeback.app-material-release-10 C:\Users\neuro\.gradle\caches\9.8.0\transforms\2d1c6885d6faa48f8aa108535464e6a4\transformed\material-release\res
+com.timeback.app-emoji2-1.3.0-11 C:\Users\neuro\.gradle\caches\9.8.0\transforms\36ebb979ae74a5bf67438458860e7ac5\transformed\emoji2-1.3.0\res
+com.timeback.app-annotation-experimental-1.4.1-12 C:\Users\neuro\.gradle\caches\9.8.0\transforms\38b2b6eb8eaa68890839770c8d61d12f\transformed\annotation-experimental-1.4.1\res
+com.timeback.app-play-services-base-18.5.0-13 C:\Users\neuro\.gradle\caches\9.8.0\transforms\39392ad1f60bee863e7f5de9a225d361\transformed\play-services-base-18.5.0\res
+com.timeback.app-navigation-common-2.8.3-14 C:\Users\neuro\.gradle\caches\9.8.0\transforms\3dc4be1d7e2324223fa75fb5fe7e7989\transformed\navigation-common-2.8.3\res
+com.timeback.app-savedstate-1.2.1-15 C:\Users\neuro\.gradle\caches\9.8.0\transforms\3fbf17e89345fb0854b1971fecd61307\transformed\savedstate-1.2.1\res
+com.timeback.app-lifecycle-viewmodel-ktx-2.8.6-16 C:\Users\neuro\.gradle\caches\9.8.0\transforms\413470e4419c3a7ca246bf1a2d001ca0\transformed\lifecycle-viewmodel-ktx-2.8.6\res
+com.timeback.app-customview-poolingcontainer-1.0.0-17 C:\Users\neuro\.gradle\caches\9.8.0\transforms\467f7e80f568504d25e1a8e3b270dffc\transformed\customview-poolingcontainer-1.0.0\res
+com.timeback.app-material-ripple-release-18 C:\Users\neuro\.gradle\caches\9.8.0\transforms\5676fbd3867e4278f41cd54c5b4966d2\transformed\material-ripple-release\res
+com.timeback.app-lifecycle-viewmodel-release-19 C:\Users\neuro\.gradle\caches\9.8.0\transforms\56db38065a0b0550e9516f3423d02dfe\transformed\lifecycle-viewmodel-release\res
+com.timeback.app-activity-1.9.3-20 C:\Users\neuro\.gradle\caches\9.8.0\transforms\5fa5dfe1e0aceee101cb548b81e741b9\transformed\activity-1.9.3\res
+com.timeback.app-navigation-common-ktx-2.8.3-21 C:\Users\neuro\.gradle\caches\9.8.0\transforms\611e2c4cd2b96e507b0a30a1107a966a\transformed\navigation-common-ktx-2.8.3\res
+com.timeback.app-core-ktx-1.13.1-22 C:\Users\neuro\.gradle\caches\9.8.0\transforms\678e761693a07a9a379bf08c02281741\transformed\core-ktx-1.13.1\res
+com.timeback.app-core-runtime-2.2.0-23 C:\Users\neuro\.gradle\caches\9.8.0\transforms\75eaa9ed2454b636d7369c3f83ea370c\transformed\core-runtime-2.2.0\res
+com.timeback.app-navigation-runtime-ktx-2.8.3-24 C:\Users\neuro\.gradle\caches\9.8.0\transforms\7a20cd6ae0432c630b1a640714be6bd4\transformed\navigation-runtime-ktx-2.8.3\res
+com.timeback.app-ui-util-release-25 C:\Users\neuro\.gradle\caches\9.8.0\transforms\7c76ac18eece094993e9916fa337abc9\transformed\ui-util-release\res
+com.timeback.app-ui-tooling-data-release-26 C:\Users\neuro\.gradle\caches\9.8.0\transforms\7e01d5c2da3317228611472b1618c622\transformed\ui-tooling-data-release\res
+com.timeback.app-material-icons-core-release-27 C:\Users\neuro\.gradle\caches\9.8.0\transforms\846eb9d72ad74a08d61a4f0ec0adef39\transformed\material-icons-core-release\res
+com.timeback.app-navigation-compose-2.8.3-28 C:\Users\neuro\.gradle\caches\9.8.0\transforms\852bb1d6af4cc350f8309209eea47fc0\transformed\navigation-compose-2.8.3\res
+com.timeback.app-savedstate-ktx-1.2.1-29 C:\Users\neuro\.gradle\caches\9.8.0\transforms\89e0970fb4f44a1aaf73b38c644a5372\transformed\savedstate-ktx-1.2.1\res
+com.timeback.app-ui-test-manifest-1.7.4-30 C:\Users\neuro\.gradle\caches\9.8.0\transforms\8da90c00d09fa90dbf84b7637e0588f0\transformed\ui-test-manifest-1.7.4\res
+com.timeback.app-datastore-release-31 C:\Users\neuro\.gradle\caches\9.8.0\transforms\8de64020cdccbf8938471489508d060c\transformed\datastore-release\res
+com.timeback.app-foundation-layout-release-32 C:\Users\neuro\.gradle\caches\9.8.0\transforms\8e66f82295c371719e84886497fbd708\transformed\foundation-layout-release\res
+com.timeback.app-animation-core-release-33 C:\Users\neuro\.gradle\caches\9.8.0\transforms\90d5bb843e8e35a74feaa3cdc68cffef\transformed\animation-core-release\res
+com.timeback.app-ui-release-34 C:\Users\neuro\.gradle\caches\9.8.0\transforms\9102af370be31f474f250367c93f5b13\transformed\ui-release\res
+com.timeback.app-ui-unit-release-35 C:\Users\neuro\.gradle\caches\9.8.0\transforms\924106fd13c257fb9f7562d22db5ff2f\transformed\ui-unit-release\res
+com.timeback.app-datastore-preferences-release-36 C:\Users\neuro\.gradle\caches\9.8.0\transforms\9ca3e70533857e637fdf0269feb3f723\transformed\datastore-preferences-release\res
+com.timeback.app-lifecycle-runtime-release-37 C:\Users\neuro\.gradle\caches\9.8.0\transforms\a5bdb188d5fd6556b79a42caa1f2de3b\transformed\lifecycle-runtime-release\res
+com.timeback.app-lifecycle-livedata-2.8.6-38 C:\Users\neuro\.gradle\caches\9.8.0\transforms\a89280ff96cf81a7d09778aa17e48fa3\transformed\lifecycle-livedata-2.8.6\res
+com.timeback.app-play-services-basement-18.4.0-39 C:\Users\neuro\.gradle\caches\9.8.0\transforms\b1b13cbab75bf5eae25c1bc8a26435b6\transformed\play-services-basement-18.4.0\res
+com.timeback.app-material3-release-40 C:\Users\neuro\.gradle\caches\9.8.0\transforms\b623bc45eb74cf5a694efea3b4a49d09\transformed\material3-release\res
+com.timeback.app-foundation-release-41 C:\Users\neuro\.gradle\caches\9.8.0\transforms\b7a5732e7873a3453df5b1a02dcf7b83\transformed\foundation-release\res
+com.timeback.app-lifecycle-livedata-core-2.8.6-42 C:\Users\neuro\.gradle\caches\9.8.0\transforms\b852ebc220d4c10c2e601ec5bdb7f97b\transformed\lifecycle-livedata-core-2.8.6\res
+com.timeback.app-core-1.13.1-43 C:\Users\neuro\.gradle\caches\9.8.0\transforms\c14f4ff84305e750142348e37d85e6ec\transformed\core-1.13.1\res
+com.timeback.app-ui-text-release-44 C:\Users\neuro\.gradle\caches\9.8.0\transforms\c34f1e9930eebd512591b016bba0f3e2\transformed\ui-text-release\res
+com.timeback.app-animation-release-45 C:\Users\neuro\.gradle\caches\9.8.0\transforms\c39922dee94575a9a00910ebc4e25189\transformed\animation-release\res
+com.timeback.app-billing-7.1.1-46 C:\Users\neuro\.gradle\caches\9.8.0\transforms\cf2a884820335d04d1ffbabee70fb1b8\transformed\billing-7.1.1\res
+com.timeback.app-material-icons-extended-release-47 C:\Users\neuro\.gradle\caches\9.8.0\transforms\d045e0ce98b728ed0be06c75c1a312b8\transformed\material-icons-extended-release\res
+com.timeback.app-graphics-path-1.0.1-48 C:\Users\neuro\.gradle\caches\9.8.0\transforms\d3ea13fb7f340d1d14e87fdec4d3b206\transformed\graphics-path-1.0.1\res
+com.timeback.app-profileinstaller-1.3.1-49 C:\Users\neuro\.gradle\caches\9.8.0\transforms\d6b7476c36196d3a0ee39397b66d9f8d\transformed\profileinstaller-1.3.1\res
+com.timeback.app-ui-tooling-preview-release-50 C:\Users\neuro\.gradle\caches\9.8.0\transforms\d7c10600ab9d95a6c690cea3e6896fc8\transformed\ui-tooling-preview-release\res
+com.timeback.app-navigation-runtime-2.8.3-51 C:\Users\neuro\.gradle\caches\9.8.0\transforms\e413fc3eff02e1034058ea53c7aa9e1a\transformed\navigation-runtime-2.8.3\res
+com.timeback.app-ui-geometry-release-52 C:\Users\neuro\.gradle\caches\9.8.0\transforms\f49010a768d514a1aa62e149ee592468\transformed\ui-geometry-release\res
+com.timeback.app-runtime-saveable-release-53 C:\Users\neuro\.gradle\caches\9.8.0\transforms\f6924d64014392b0e19cf38f2250c70d\transformed\runtime-saveable-release\res
+com.timeback.app-activity-ktx-1.9.3-54 C:\Users\neuro\.gradle\caches\9.8.0\transforms\f960f0e75fcecfc51f62b42f34f38921\transformed\activity-ktx-1.9.3\res
+com.timeback.app-lifecycle-process-2.8.6-55 C:\Users\neuro\.gradle\caches\9.8.0\transforms\fb8ec9a826901ea78d0576318ede37ab\transformed\lifecycle-process-2.8.6\res
+com.timeback.app-startup-runtime-1.1.1-56 C:\Users\neuro\.gradle\caches\9.8.0\transforms\feaa0ca5854372eff19c0d717eacdec3\transformed\startup-runtime-1.1.1\res
+com.timeback.app-resValues-57 D:\My Career\Reels App\android\app\build\generated\res\resValues\debug
+com.timeback.app-packageDebugResources-58 D:\My Career\Reels App\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.timeback.app-packageDebugResources-59 D:\My Career\Reels App\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.timeback.app-debug-60 D:\My Career\Reels App\android\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.timeback.app-debug-61 D:\My Career\Reels App\android\app\src\debug\res
+com.timeback.app-main-62 D:\My Career\Reels App\android\app\src\main\res
