@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TimeBack - Play Store Graphics Asset Generator</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0A0907;
+      color: #FCFFFA;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 { color: #FFE9B4; margin-bottom: 8px; }
+    p { color: rgba(252,255,250,0.7); margin-bottom: 32px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 32px; }
+    .card {
+      background: #14130F;
+      border: 1px solid rgba(255,233,180,0.15);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card h3 { color: #FFE9B4; font-size: 18px; margin: 0; }
+    .card span { font-size: 13px; color: rgba(252,255,250,0.5); }
+    .preview-box {
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+    canvas { max-width: 100%; height: auto; border-radius: 12px; }
+    .btn-download {
+      background: linear-gradient(180deg, #FFE9B4 0%, #FFD99A 100%);
+      color: #2B1600;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 0 #B8732C;
+      transition: all 0.1s;
+    }
+    .btn-download:hover { transform: translateY(-1px); box-shadow: 0 5px 0 #B8732C; }
+    .btn-download:active { transform: translateY(3px); box-shadow: 0 1px 0 #B8732C; }
+  </style>
+</head>
+<body>
+
+  <h1>TimeBack - Google Play Store Asset Generator</h1>
+  <p>Google Play Console par upload karne ke liye 512x512 App Icon aur 1024x500 Feature Graphic niche render ho chuke hain. Bas 1-click karke download karein aur Play Console par upload kar dein!</p>
+
+  <div class="grid">
+
+    <!-- Card 1: 512x512 App Icon -->
+    <div class="card">
+      <div>
+        <h3>1. App Icon (Mandatory)</h3>
+        <span>Exact 512 x 512 pixels • 32-bit PNG</span>
+      </div>
+      <div class="preview-box">
+        <canvas id="iconCanvas" width="512" height="512"></canvas>
+      </div>
+      <button class="btn-download" onclick="downloadCanvas('iconCanvas', 'timeback_icon_512x512.png')">
+        ⬇️ Download App Icon (512x512 PNG)
+      </button>
+    </div>
+
+    <!-- Card 2: 1024x500 Feature Graphic -->
+    <div class="card">
+      <div>
+        <h3>2. Feature Graphic Banner (Mandatory)</h3>
+        <span>Exact 1024 x 500 pixels • PNG</span>
+      </div>
+      <div class="preview-box">
+        <canvas id="featureCanvas" width="1024" height="500"></canvas>
+      </div>
+      <button class="btn-download" onclick="downloadCanvas('featureCanvas', 'timeback_feature_graphic_1024x500.png')">
+        ⬇️ Download Feature Graphic (1024x500 PNG)
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    // 1. Draw 512x512 App Icon
+    function drawAppIcon() {
+      const canvas = document.getElementById('iconCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Background rounded midnight
+      ctx.fillStyle = '#0A0907';
+      ctx.fillRect(0, 0, 512, 512);
+
+      // Radial Warm Glow
+      const grad = ctx.createRadialGradient(256, 256, 40, 256, 256, 240);
+      grad.addColorStop(0, 'rgba(113, 58, 0, 0.7)');
+      grad.addColorStop(0.6, 'rgba(38, 20, 0, 0.4)');
+      grad.addColorStop(1, 'rgba(10, 9, 7, 0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(256, 256, 240, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Outer Gold Accent Ring
+      ctx.strokeStyle = 'rgba(255, 233, 180, 0.25)';
+      ctx.lineWidth = 8;
+      ctx.beginPath();
+      ctx.arc(256, 256, 230, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Mascot Brain Body (Centered)
+      ctx.fillStyle = '#FFAAA6';
+      ctx.beginPath();
+      ctx.arc(256, 256, 150, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Brain Texture / Lobes
+      ctx.fillStyle = '#FF837D';
+      ctx.beginPath();
+      ctx.arc(190, 210, 36, 0, Math.PI * 2);
+      ctx.arc(322, 210, 36, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Big Eyes
+      ctx.fillStyle = '#2B1600';
+      ctx.beginPath();
+      ctx.arc(210, 250, 22, 0, Math.PI * 2);
+      ctx.arc(302, 250, 22, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Eye Sparkles
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.arc(204, 242, 8, 0, Math.PI * 2);
+      ctx.arc(296, 242, 8, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Cheeks Blush
+      ctx.fillStyle = '#FF837D';
+      ctx.beginPath();
+      ctx.arc(170, 280, 16, 0, Math.PI * 2);
+      ctx.arc(342, 280, 16, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Smile
+      ctx.strokeStyle = '#2B1600';
+      ctx.lineWidth = 10;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.arc(256, 285, 36, 0.1 * Math.PI, 0.9 * Math.PI, false);
+      ctx.stroke();
+
+      // Clock Badge Top-Right
+      ctx.fillStyle = '#FFE9B4';
+      ctx.strokeStyle = '#B8732C';
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.arc(345, 175, 42, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      // Clock hands
+      ctx.strokeStyle = '#2B1600';
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.moveTo(345, 175);
+      ctx.lineTo(345, 150);
+      ctx.moveTo(345, 175);
+      ctx.lineTo(365, 175);
+      ctx.stroke();
+    }
+
+    // 2. Draw 1024x500 Feature Graphic
+    function drawFeatureGraphic() {
+      const canvas = document.getElementById('featureCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Dark background
+      ctx.fillStyle = '#0A0907';
+      ctx.fillRect(0, 0, 1024, 500);
+
+      // Warm glow gradient on left
+      const grad = ctx.createRadialGradient(280, 250, 50, 280, 250, 400);
+      grad.addColorStop(0, 'rgba(113, 58, 0, 0.8)');
+      grad.addColorStop(0.5, 'rgba(38, 20, 0, 0.5)');
+      grad.addColorStop(1, 'rgba(10, 9, 7, 0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(280, 250, 400, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Left: Brain Mascot
+      ctx.save();
+      ctx.translate(260, 250);
+
+      // Mascot Brain Circle
+      ctx.fillStyle = '#FFAAA6';
+      ctx.beginPath();
+      ctx.arc(0, 0, 120, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Eyes
+      ctx.fillStyle = '#2B1600';
+      ctx.beginPath();
+      ctx.arc(-38, -10, 18, 0, Math.PI * 2);
+      ctx.arc(38, -10, 18, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Highlights
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.arc(-42, -16, 7, 0, Math.PI * 2);
+      ctx.arc(34, -16, 7, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Smile
+      ctx.strokeStyle = '#2B1600';
+      ctx.lineWidth = 8;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.arc(0, 20, 28, 0.1 * Math.PI, 0.9 * Math.PI, false);
+      ctx.stroke();
+
+      ctx.restore();
+
+      // Right: Typography & Value Proposition
+      ctx.fillStyle = '#FFE9B4';
+      ctx.font = '800 68px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('TimeBack', 480, 200);
+
+      ctx.fillStyle = '#FCFFFA';
+      ctx.font = '700 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('Reels Counter & Blocker', 480, 250);
+
+      ctx.fillStyle = 'rgba(252, 255, 250, 0.7)';
+      ctx.font = '500 20px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('See your reel count. Break doomscrolling.', 480, 295);
+
+      // Badge Pill
+      ctx.fillStyle = '#FFE9B4';
+      ctx.beginPath();
+      ctx.roundRect(480, 330, 280, 48, [24]);
+      ctx.fill();
+
+      ctx.fillStyle = '#2B1600';
+      ctx.font = '800 16px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('GET YOUR TIME BACK ⏳', 510, 360);
+    }
+
+    function downloadCanvas(canvasId, filename) {
+      const canvas = document.getElementById(canvasId);
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    drawAppIcon();
+    drawFeatureGraphic();
+  </script>
+
+</body>
+</html>
